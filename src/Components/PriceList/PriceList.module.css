@@ -1,0 +1,18 @@
+.PriceItem {
+    display: flex;
+    width: 100%;
+
+}
+
+.PriceItem:nth-child(2n+1) {
+    background-color: rgb(197, 197, 197);
+}
+
+.ArtNumber,
+.SeqNum,
+.GoodName,
+.Amount,
+.Price {
+    flex-grow: 1;
+    border: 1px solid black;
+}
