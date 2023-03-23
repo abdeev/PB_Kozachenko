@@ -4,6 +4,7 @@
   grid-gap: 16px;
   padding-bottom: 24px;
 }
+
 .Button_wrapper {
   display: flex;
   width: 300px;
@@ -11,4 +12,8 @@
   gap: 10px;
   justify-content: left;
   align-content: center;
+}
+
+.bodyWrapper {
+  display: flex;
 }

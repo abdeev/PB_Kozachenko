@@ -39,5 +39,56 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdeev/PB_Kozachenko.git"
+  },
+  "keywords": [
+    "4.",
+    "Gourmet",
+    "Coffee",
+    "Loose-Leaf",
+    "Tea",
+    "Artisanal",
+    "Snacks",
+    "Espresso",
+    "Herbal",
+    "Tea",
+    "Healthy",
+    "Snacks",
+    "French",
+    "Roast",
+    "Coffee",
+    "Green",
+    "Tea",
+    "Organic",
+    "Snacks",
+    "Single-Origin",
+    "Coffee",
+    "Black",
+    "Tea",
+    "Gluten-Free",
+    "Snacks",
+    "Cold",
+    "Brew",
+    "Coffee",
+    "Chai",
+    "Tea",
+    "Vegan",
+    "Snacks",
+    "Flavored",
+    "Coffee",
+    "Iced",
+    "Tea"
+  ],
+  "author": "Abdeev",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/abdeev/PB_Kozachenko/issues"
+  },
+  "homepage": "https://github.com/abdeev/PB_Kozachenko#readme"
 }

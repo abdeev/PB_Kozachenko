@@ -18,7 +18,7 @@ export default function TopPositions() {
     <>
       <Swiper
         slidesPerView={3}
-        spaceBetween={30}
+        spaceBetween={5}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
@@ -32,22 +32,32 @@ export default function TopPositions() {
         <SwiperSlide>
           <img
             src="https://swiperjs.com/demos/images/nature-10.jpg"
-            alt="Some random demo"
+            alt="Top positions"
+            id="Alokozay"
           />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={KavaStarogoLvovu} alt="Кава Старого Львову" />
+          <img
+            src={KavaStarogoLvovu}
+            alt="Кава Старого Львову"
+            id="kavaStarogoLvovu"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={KonservyMK} alt="Консерви торгової марки МК, Польща" />
+          <img
+            src={KonservyMK}
+            alt="Консерви торгової марки МК, Польща"
+            id="konservyMK"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={Lovare} alt="Чай Ловаре" />
+          <img src={Lovare} alt="Чай Ловаре" id="chaiLovare" />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src="https://swiperjs.com/demos/images/nature-6.jpg"
             alt="Some random demo"
+            id="Mayskiy"
           />
         </SwiperSlide>
       </Swiper>

@@ -1,11 +1,34 @@
 .PriceItem {
     display: flex;
-    width: 100%;
-
+    width: 600px;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 .PriceItem:nth-child(2n+1) {
     background-color: rgb(197, 197, 197);
+}
+
+.ArtNumber {
+    width: 70px;
+}
+
+.SeqNum {
+    width: 40px;
+}
+
+
+.GoodName {
+    width: 350px;
+}
+
+.Amount {
+    width: 50px;
+}
+
+.Price {
+    width: 50px;
 }
 
 .ArtNumber,
@@ -13,6 +36,6 @@
 .GoodName,
 .Amount,
 .Price {
-    flex-grow: 1;
+    margin: 0;
     border: 1px solid black;
 }

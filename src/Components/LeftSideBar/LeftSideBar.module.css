@@ -1,0 +1,18 @@
+.Sidebar {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.SidebarButton {
+    width: 150px;
+    margin-bottom: 5px;
+    color: aliceblue;
+    background-color: rgb(59, 29, 7);
+    border-radius: 7px;
+}
+
+.SidebarButton:hover,
+.SidebarButton:focus {
+    background-color: rgb(91, 16, 16);
+}
