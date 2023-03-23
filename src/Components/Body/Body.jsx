@@ -3,11 +3,11 @@ import LeftSideBar from "../LeftSideBar/LeftSideBar";
 import Pricelist from "../PriceList/PriceList";
 import s from "./Body.module.css";
 
-const Body = ({ priceList }) => {
+const Body = ({ priceList, query }) => {
   return (
     <div className={s.Body}>
       <LeftSideBar />
-      <Pricelist priceList={priceList} />
+      <Pricelist priceList={priceList} query={query} />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swiper from "./Components/Swiper/Swiper";
 import { PageHeader } from "../src/Components/PageHeader/PageHeader";
 import Body from "./Components/Body/Body";
@@ -6,6 +6,11 @@ import s from "../src/App.module.css";
 
 export const App = () => {
   const [fullPrice, setFullPrice] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const onChangeQuery = (query) => {
+    setSearchQuery(query);
+  };
 
   const fullPriceJSON = async () => {
     try {
@@ -22,13 +27,17 @@ export const App = () => {
       console.log(error);
     }
   };
-  fullPriceJSON();
+  useEffect(() => {
+    if (searchQuery) {
+      fullPriceJSON();
+    }
+  }, [searchQuery]);
 
   return (
     <div className={s.App}>
-      <PageHeader />
+      <PageHeader onSubmit={onChangeQuery} />
       <Swiper />
-      <Body priceList={fullPrice} />
+      <Body priceList={fullPrice} query={searchQuery} />
     </div>
   );
 };

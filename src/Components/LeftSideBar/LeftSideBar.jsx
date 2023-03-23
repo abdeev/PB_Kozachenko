@@ -7,7 +7,7 @@ const LeftSideBar = () => {
       <button className={s.SidebarButton}>Відправити заявку</button>
       <button className={s.SidebarButton}>Зв'язатися з менеджером</button>
       <button className={s.SidebarButton}>Самовивіз</button>
-      <button className={s.SidebarButton}>Стати дистриб'ютером</button>
+      <button className={s.SidebarButton}>Скачати повний прайс у PDF</button>
       <button className={s.SidebarButton}>Залишити відгук</button>
       <button className={s.SidebarButton}>Де забрати</button>
     </div>
