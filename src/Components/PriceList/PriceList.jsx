@@ -8,8 +8,8 @@ const Pricelist = ({ priceList, query }) => {
 
   if (filteredPrice.length > 0)
     return (
-      <div>
-        <ul>
+      <div className={s.PriceListWrapper}>
+        <ul className={s.PriceUL}>
           {filteredPrice.map((i) => {
             if (i.Art === "" && typeof i.SeqNum === "string") {
               return (
@@ -25,7 +25,7 @@ const Pricelist = ({ priceList, query }) => {
                   <p className={s.GoodName}>{i.GoodName}</p>
                   <p className={s.Amount}>{i.Amount}</p>
                   <p className={s.Price}>{i.Price}</p>
-                  <button>+</button>
+                  <button className={s.AddButton}>+</button>
                 </li>
               );
             }

@@ -1,13 +1,27 @@
+.PriceListWrapper {
+    width: fit-content;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.PriceUL {
+    margin: 0 auto;
+    padding: 0;
+}
+
 .PriceItem {
     display: flex;
-    width: 600px;
     justify-content: center;
-    margin: 0;
+    margin: 1px 0;
     padding: 0;
 }
 
 .PriceItem:nth-child(2n+1) {
     background-color: rgb(197, 197, 197);
+}
+
+.PriceItem:last-child {
+    margin-bottom: 15px;
 }
 
 .ArtNumber {
@@ -36,6 +50,6 @@
 .GoodName,
 .Amount,
 .Price {
-    margin: 0;
+    margin: 1px;
     border: 1px solid black;
 }
