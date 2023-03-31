@@ -1,5 +1,6 @@
 .ContactsContainer {
     display: flex;
     flex-direction: column;
-    width: 150px;
+    max-width: 120px;
+    margin: 0 15px;
 }

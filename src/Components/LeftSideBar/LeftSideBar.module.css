@@ -7,12 +7,14 @@
 .SidebarButton {
     width: 150px;
     margin-bottom: 5px;
-    color: aliceblue;
-    background-color: rgb(59, 29, 7);
+    color: #FFF8DC;
+    background-color: #8B4513;
     border-radius: 7px;
+    font-family: inherit;
 }
 
 .SidebarButton:hover,
 .SidebarButton:focus {
-    background-color: rgb(91, 16, 16);
+    background-color: #FFF8DC;
+    color: #8B4513;
 }

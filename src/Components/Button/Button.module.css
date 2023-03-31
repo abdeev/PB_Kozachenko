@@ -5,8 +5,8 @@
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
   display: inline-block;
-  color: #3b1d07;
-  border: 1px solid #3b1d07;
+  color: #8B4513;
+  border: 1px solid #8B4513;
   margin: 2px;
   text-decoration: none;
   cursor: pointer;
@@ -22,5 +22,6 @@
 
 .Button:hover,
 .Button:focus {
-  background-color: rgba(59, 29, 7, 0.6);
+  background-color: #8B4513;
+  color: #FFF8DC;
 }

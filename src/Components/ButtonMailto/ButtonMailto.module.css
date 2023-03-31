@@ -1,0 +1,15 @@
+.ButtonMailto {
+    margin-bottom: 10px;
+    background-color: #8B4513;
+    color: aliceblue;
+    border: 1px solid gray;
+    border-radius: 7px;
+    font-family: inherit;
+
+}
+
+.ButtonMailto:hover,
+.ButtonMailto:focus {
+    background-color: #FFF8DC;
+    color: #8B4513;
+}

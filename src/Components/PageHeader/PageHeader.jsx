@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { ReactComponent as IconSearch } from "../../static/img/IconSearch.svg";
 import { ContactUs } from "../ContactUs/ContactUs";
-import Logo from "../../static/img/logoKozachenko.png";
+import Logo from "../../static/img/Logo Kozachenko transparent.png";
 import { toast } from "react-toastify";
 import css from "./PageHeader.module.css";
 
