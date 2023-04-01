@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/PB_Kozachenko/static/css/main.093c327f.css",
-    "main.js": "/PB_Kozachenko/static/js/main.7acac98b.js",
+    "main.css": "/PB_Kozachenko/static/css/main.69f4f81d.css",
+    "main.js": "/PB_Kozachenko/static/js/main.3d667eb2.js",
     "static/js/787.e7df3860.chunk.js": "/PB_Kozachenko/static/js/787.e7df3860.chunk.js",
     "static/media/Logo Kozachenko transparent.png": "/PB_Kozachenko/static/media/Logo Kozachenko transparent.27287aae22c40bedba36.png",
     "static/media/konservy-mk-poland.png": "/PB_Kozachenko/static/media/konservy-mk-poland.57c54f665b644508150a.png",
     "static/media/kava-starogo-lvovu-logo.webp": "/PB_Kozachenko/static/media/kava-starogo-lvovu-logo.aad582dc3b79eef9c07b.webp",
     "static/media/IconSearch.svg": "/PB_Kozachenko/static/media/IconSearch.020a213063cbbe5de47f514062a217e0.svg",
     "index.html": "/PB_Kozachenko/index.html",
-    "main.093c327f.css.map": "/PB_Kozachenko/static/css/main.093c327f.css.map",
-    "main.7acac98b.js.map": "/PB_Kozachenko/static/js/main.7acac98b.js.map",
+    "main.69f4f81d.css.map": "/PB_Kozachenko/static/css/main.69f4f81d.css.map",
+    "main.3d667eb2.js.map": "/PB_Kozachenko/static/js/main.3d667eb2.js.map",
     "787.e7df3860.chunk.js.map": "/PB_Kozachenko/static/js/787.e7df3860.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.093c327f.css",
-    "static/js/main.7acac98b.js"
+    "static/css/main.69f4f81d.css",
+    "static/js/main.3d667eb2.js"
   ]
 }
