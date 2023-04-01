@@ -17,7 +17,7 @@
 }
 
 .PriceItem:nth-child(2n+1) {
-    background-color: #FFF8DC;
+    background-color: var(--white-bg-color);
 }
 
 .PriceItem:last-child {

@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { ReactComponent as IconSearch } from "../../static/img/IconSearch.svg";
-import { ContactUs } from "../ContactUs/ContactUs";
 import Logo from "../../static/img/Logo Kozachenko transparent.png";
 import { toast } from "react-toastify";
-import css from "./PageHeader.module.css";
+import s from "./PageHeader.module.css";
+import ContactButton from "Components/ContactButton/ContactButton";
 
 export const PageHeader = ({ onSubmit }) => {
   const [query, setQuery] = useState("");
@@ -31,16 +31,22 @@ export const PageHeader = ({ onSubmit }) => {
   };
 
   return (
-    <header className={css.Header}>
-      <ContactUs />
-      <img src={Logo} alt="main logo Kozachenko" className={css.Logo} />
-      <form className={css.SearchForm} onSubmit={handleSubmit}>
-        <button type="submit" className={css.SearchForm_button}>
+    <header className={s.Header}>
+      <div className={s.ContactsContainer}>
+        <ContactButton
+          linkTo="mailto:no-reply@example.com"
+          label="Написати e-mail"
+        />
+        <ContactButton linkTo="tel:+380504540292" label="Подзвонити" />
+      </div>
+      <img src={Logo} alt="main logo Kozachenko" className={s.Logo} />
+      <form className={s.SearchForm} onSubmit={handleSubmit}>
+        <button type="submit" className={s.SearchForm_button}>
           <IconSearch />
         </button>
 
         <input
-          className={css.SearchForm_input}
+          className={s.SearchForm_input}
           type="text"
           autoComplete="off"
           autoFocus

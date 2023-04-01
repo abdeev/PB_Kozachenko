@@ -1,23 +1,19 @@
-.Sidebar {
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-}
-
-.SidebarButton {
-    width: 150px;
-    margin-bottom: 5px;
-    color: var(--white-bg-color);
+.ButtonPhoneto {
+    width: 110px;
+    text-align: center;
+    padding: 2px 0;
     background-color: var(--brown-bg-color);
+    color: var(--white-bg-color);
     border: 1px solid var(--white-bg-color);
+    text-decoration: none;
     border-radius: 7px;
     font-family: inherit;
     transition: var(--default-animation);
+
 }
 
-.SidebarButton:hover,
-.SidebarButton:focus {
+.ButtonPhoneto:hover,
+.ButtonPhoneto:focus {
     background-color: var(--white-bg-color);
     color: var(--brown-bg-color);
-    box-shadow: var(--shadow-buttons);
 }
