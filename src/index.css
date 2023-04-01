@@ -1,4 +1,8 @@
 :root {
+  /* media sizes */
+  --mobile: 360px;
+  --tablet: 780px;
+  --desktop: 1280px;
   /* color palette */
   --brown-bg-color: #8B4513;
   --white-bg-color: #FFF8DC;
