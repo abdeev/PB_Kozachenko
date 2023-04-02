@@ -8,8 +8,9 @@ import Logo from "../../static/img/Logo Kozachenko transparent.png";
 import { toast } from "react-toastify";
 import s from "./PageHeader.module.css";
 import ContactButton from "Components/ContactButton/ContactButton";
+import { DropDownMenu } from "Components/DropDownMenu/DropDownMenu";
 
-export const PageHeader = ({ onSubmit }) => {
+export const PageHeader = ({ onSubmit, categories }) => {
   const [query, setQuery] = useState("");
   const [dropdownFlag, setDropdownFlag] = useState(false);
 
@@ -56,7 +57,12 @@ export const PageHeader = ({ onSubmit }) => {
         <img src={Logo} alt="main logo Kozachenko" className={s.Logo} />
         <div className={s.dropDownWrap}>
           {dropdownFlag ? (
-            <p onClick={handleDropDownMenu}>MENU</p>
+            <DropDownMenu
+              onClick={handleDropDownMenu}
+              menuItems={categories}
+              dropdownFlag={dropdownFlag}
+              setDropdownFlag={setDropdownFlag}
+            />
           ) : (
             <IconMenu className={s.IconMenu} onClick={handleDropDownMenu} />
           )}
