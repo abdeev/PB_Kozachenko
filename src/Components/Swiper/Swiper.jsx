@@ -17,8 +17,8 @@ export default function TopPositions() {
   return (
     <>
       <Swiper
-        slidesPerView={3}
-        spaceBetween={5}
+        slidesPerView={4}
+        spaceBetween={2}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,

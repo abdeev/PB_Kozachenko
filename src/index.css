@@ -1,7 +1,7 @@
 :root {
   /* media sizes */
   --mobile: 360px;
-  --tablet: 780px;
+  --tablet: 768px;
   --desktop: 1280px;
   /* color palette */
   --brown-bg-color: #8B4513;

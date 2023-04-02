@@ -17,7 +17,7 @@
 }
 
 .PriceItem:nth-child(2n+1) {
-    background-color: var(--white-bg-color);
+    background-color: rgb(128, 128, 128, 0.3);
 }
 
 .PriceItem:last-child {
@@ -25,7 +25,7 @@
 }
 
 .ArtNumber {
-    width: 70px;
+    width: 35px;
 }
 
 .SeqNum {
@@ -34,11 +34,11 @@
 
 
 .GoodName {
-    width: 350px;
+    width: 200px;
 }
 
 .Amount {
-    width: 50px;
+    width: 37px;
 }
 
 .Price {
@@ -50,6 +50,8 @@
 .GoodName,
 .Amount,
 .Price {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
     margin: 1px;
     border: 1px solid black;
 }

@@ -1,21 +1,21 @@
 .Button {
-  padding: 8px 16px;
-  border-radius: 2px;
-  background-color: transparent;
-  transition: var(--default-animation);
-  text-align: center;
   display: inline-block;
+  min-width: 50px;
+  padding: 5px 5px;
+  text-align: center;
   color: var(--brown-bg-color);
+  background-color: transparent;
   border: 1px solid var(--brown-bg-color);
+  border-radius: 2px;
   margin: 2px;
   text-decoration: none;
-  cursor: pointer;
   font-family: inherit;
   font-size: 18px;
   line-height: 24px;
   font-style: normal;
   font-weight: 500;
-  min-width: 160px;
+  transition: var(--default-animation);
+  cursor: pointer;
 }
 
 .Button:hover,

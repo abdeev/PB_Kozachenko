@@ -1,7 +1,13 @@
 .Sidebar {
-    width: 150px;
-    display: flex;
-    flex-direction: column;
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .Sidebar {
+        display: flex;
+        width: 150px;
+        flex-direction: column;
+    }
 }
 
 .SidebarButton {
