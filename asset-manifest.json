@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/PB_Kozachenko/static/css/main.da17ff9e.css",
-    "main.js": "/PB_Kozachenko/static/js/main.5dcafba6.js",
+    "main.css": "/PB_Kozachenko/static/css/main.74c176ad.css",
+    "main.js": "/PB_Kozachenko/static/js/main.3d853617.js",
     "static/js/787.e7df3860.chunk.js": "/PB_Kozachenko/static/js/787.e7df3860.chunk.js",
     "static/media/Logo Kozachenko transparent.png": "/PB_Kozachenko/static/media/Logo Kozachenko transparent.27287aae22c40bedba36.png",
     "static/media/konservy-mk-poland.png": "/PB_Kozachenko/static/media/konservy-mk-poland.57c54f665b644508150a.png",
@@ -11,12 +11,12 @@
     "index.html": "/PB_Kozachenko/index.html",
     "static/media/mail_new_icon.svg": "/PB_Kozachenko/static/media/mail_new_icon.c55a690c33dc4458b19b4554456eecd0.svg",
     "static/media/drop_down_icon.svg": "/PB_Kozachenko/static/media/drop_down_icon.f8efbcf89054cbe9ad10c37975a24225.svg",
-    "main.da17ff9e.css.map": "/PB_Kozachenko/static/css/main.da17ff9e.css.map",
-    "main.5dcafba6.js.map": "/PB_Kozachenko/static/js/main.5dcafba6.js.map",
+    "main.74c176ad.css.map": "/PB_Kozachenko/static/css/main.74c176ad.css.map",
+    "main.3d853617.js.map": "/PB_Kozachenko/static/js/main.3d853617.js.map",
     "787.e7df3860.chunk.js.map": "/PB_Kozachenko/static/js/787.e7df3860.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.da17ff9e.css",
-    "static/js/main.5dcafba6.js"
+    "static/css/main.74c176ad.css",
+    "static/js/main.3d853617.js"
   ]
 }
