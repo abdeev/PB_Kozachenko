@@ -1,7 +1,7 @@
 .menuList {
     position: absolute;
     top: 8vh;
-    right: 8vw;
+    left: 30vmax;
     display: flex;
     flex-direction: column;
     width: 180px;
@@ -44,13 +44,12 @@
     border: 1px solid var(--brown-bg-color);
 }
 
-.backdrop {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.25);
+
+
+@media screen and (min-width: 420px) {
+    .menuList {
+        left: 60vw;
+    }
 }
 
 @-webkit-keyframes scale-up-top {

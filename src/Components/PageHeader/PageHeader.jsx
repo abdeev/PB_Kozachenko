@@ -3,24 +3,18 @@ import { useState } from "react";
 import { ReactComponent as IconSearch } from "../../static/img/IconSearch.svg";
 import { ReactComponent as IconCall } from "../../static/icons/call_icon.svg";
 import { ReactComponent as IconMail } from "../../static/icons/mail_new_icon.svg";
-import { ReactComponent as IconMenu } from "../../static/icons/drop_down_icon.svg";
 import Logo from "../../static/img/Logo Kozachenko transparent.png";
 import { toast } from "react-toastify";
 import s from "./PageHeader.module.css";
 import ContactButton from "Components/ContactButton/ContactButton";
-import { DropDownMenu } from "Components/DropDownMenu/DropDownMenu";
 
-export const PageHeader = ({ onSubmit, categories }) => {
+export const PageHeader = ({ onSubmit }) => {
   const [query, setQuery] = useState("");
-  const [dropdownFlag, setDropdownFlag] = useState(false);
 
   const handleChange = (e) => {
     setQuery(e.currentTarget.value);
   };
-  const handleDropDownMenu = (e) => {
-    e.preventDefault();
-    setDropdownFlag(!dropdownFlag);
-  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (query.trim() === "qwerty") {
@@ -55,18 +49,6 @@ export const PageHeader = ({ onSubmit, categories }) => {
           </div>
         </div>
         <img src={Logo} alt="main logo Kozachenko" className={s.Logo} />
-        <div className={s.dropDownWrap}>
-          {dropdownFlag ? (
-            <DropDownMenu
-              onClick={handleDropDownMenu}
-              menuItems={categories}
-              dropdownFlag={dropdownFlag}
-              setDropdownFlag={setDropdownFlag}
-            />
-          ) : (
-            <IconMenu className={s.IconMenu} onClick={handleDropDownMenu} />
-          )}
-        </div>
       </div>
       <form className={s.SearchForm} onSubmit={handleSubmit}>
         <button type="submit" className={s.SearchForm_button}>

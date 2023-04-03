@@ -1,8 +1,14 @@
 import s from "./DropDownMenu.module.css";
 
-export const DropDownMenu = ({ menuItems, dropdownFlag, setDropdownFlag }) => {
+export const DropDownMenu = ({
+  menuItems,
+  dropdownFlag,
+  setDropdownFlag,
+  setCurrentCategory,
+}) => {
   const onCategoryClick = (e) => {
     console.log(e.target.innerHTML);
+    setCurrentCategory(e.target.innerHTML);
     setDropdownFlag(!dropdownFlag);
   };
   return (
