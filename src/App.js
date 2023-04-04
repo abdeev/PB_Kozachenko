@@ -6,6 +6,7 @@ import Body from "./Components/Body/Body";
 
 import { DropDownMenu } from "Components/DropDownMenu/DropDownMenu";
 import { ReactComponent as IconMenu } from "../src/static/icons/drop_down_icon.svg";
+import Backdrop from "Components/Backdrop/Backdrop";
 
 import s from "../src/App.module.css";
 
@@ -67,23 +68,32 @@ export const App = () => {
   const handleDropDownMenu = (e) => {
     e.preventDefault();
     setDropdownFlag(!dropdownFlag);
-    console.log(currentCategory);
   };
-
+  const handleBackdropClick = (e) => {
+    if (e.target === e.currentTarget) {
+      setDropdownFlag(!dropdownFlag);
+    }
+  };
   return (
     <div className={s.App}>
       <PageHeader onSubmit={onChangeQuery} />
       <div className={s.dropDownWrap}>
         {dropdownFlag ? (
-          <DropDownMenu
-            onClick={handleDropDownMenu}
-            menuItems={categories}
-            dropdownFlag={dropdownFlag}
-            setDropdownFlag={setDropdownFlag}
-            setCurrentCategory={setCurrentCategory}
-          />
+          <>
+            <DropDownMenu
+              onClick={handleDropDownMenu}
+              menuItems={categories}
+              dropdownFlag={dropdownFlag}
+              setDropdownFlag={setDropdownFlag}
+              setCurrentCategory={setCurrentCategory}
+            />
+            <Backdrop onClick={handleBackdropClick} />
+          </>
         ) : (
-          <IconMenu className={s.IconMenu} onClick={handleDropDownMenu} />
+          <div className={s.IconMenuWrap}>
+            <p className={s.IconTitle}>Меню</p>
+            <IconMenu className={s.IconMenu} onClick={handleDropDownMenu} />
+          </div>
         )}
       </div>
       <Swiper />

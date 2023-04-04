@@ -1,7 +1,5 @@
 .menuList {
-    position: absolute;
-    top: 8vh;
-    left: 30vmax;
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 180px;
@@ -13,6 +11,7 @@
     border: 1px solid var(--white-bg-color);
     border-radius: 7px;
     overflow-x: auto;
+    z-index: 100;
     cursor: pointer;
     -webkit-animation: scale-up-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     animation: scale-up-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
@@ -42,14 +41,6 @@
     background-color: var(--white-bg-color);
     color: var(--brown-bg-color);
     border: 1px solid var(--brown-bg-color);
-}
-
-
-
-@media screen and (min-width: 420px) {
-    .menuList {
-        left: 60vw;
-    }
 }
 
 @-webkit-keyframes scale-up-top {

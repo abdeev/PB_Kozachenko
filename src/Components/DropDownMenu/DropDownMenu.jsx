@@ -7,7 +7,6 @@ export const DropDownMenu = ({
   setCurrentCategory,
 }) => {
   const onCategoryClick = (e) => {
-    console.log(e.target.innerHTML);
     setCurrentCategory(e.target.innerHTML);
     setDropdownFlag(!dropdownFlag);
   };

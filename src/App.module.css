@@ -1,8 +1,7 @@
 .App {
   display: grid;
+  width: 100%;
   grid-template-columns: 1fr;
-  grid-gap: 16px;
-  padding-bottom: 24px;
   font-family: 'Pacifico', cursive;
 }
 
@@ -20,33 +19,27 @@
 }
 
 .dropDownWrap {
+  position: fixed;
+  top: 3vh;
+  right: calc((100% / 2) - 100px);
   width: 70px;
-  z-index: 1000;
+  margin-left: auto;
+  z-index: 30;
+}
+
+.IconTitle {
+  position: relative;
+  text-align: right;
+  transform: translate(150%, 15px);
+  color: var(--white-bg-color);
+  z-index: 100;
 }
 
 .IconMenu {
-  position: absolute;
-  top: 8vh;
-  left: 53vmax;
+  position: relative;
   fill: var(--brown-bg-color);
   stroke: var(--white-bg-color);
   cursor: pointer;
-  -webkit-animation: scale-up-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-  animation: scale-up-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-}
-
-.backdrop {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-
-@media screen and (min-width: 420px) {
-  .IconMenu {
-    left: 90vw;
-  }
+  transform: translate(450%, 0);
+  z-index: 100;
 }
