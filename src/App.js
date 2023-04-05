@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import Swiper from "./Components/Swiper/Swiper";
 import { PageHeader } from "../src/Components/PageHeader/PageHeader";
 import { PageFooter } from "../src/Components/PageFooter/PageFooter";
-import Body from "./Components/Body/Body";
-
 import { DropDownMenu } from "Components/DropDownMenu/DropDownMenu";
 import { ReactComponent as IconMenu } from "../src/static/icons/drop_down_icon.svg";
 import Backdrop from "Components/Backdrop/Backdrop";
 
 import s from "../src/App.module.css";
+import LeftSideBar from "Components/LeftSideBar/LeftSideBar";
+import { NaviBar } from "Components/NaviBar/NaviBar";
+import { MagnifyingGlass } from "react-loader-spinner";
+import Pricelist from "Components/PriceList/PriceList";
 
 export const App = () => {
   const [fullPrice, setFullPrice] = useState([]);
@@ -96,8 +98,25 @@ export const App = () => {
           </div>
         )}
       </div>
-      <Swiper />
-      <Body priceList={fullPrice} query={searchQuery} isLoading={isLoading} />
+      <Swiper className={s.SwiperWrap} />
+      <div className={s.Body}>
+        <LeftSideBar />
+        <div className={s.PriceNaviWrapper}>
+          <NaviBar />
+          {isLoading && (
+            <MagnifyingGlass
+              visible={true}
+              height="120"
+              width="120"
+              ariaLabel="MagnifyingGlass-loading"
+              wrapperClass="MagnifyingGlass-wrapper"
+              glassColor="#c0efff"
+              color="#8B4513"
+            />
+          )}
+          <Pricelist priceList={fullPrice} query={searchQuery} />
+        </div>
+      </div>
       <PageFooter />
     </div>
   );

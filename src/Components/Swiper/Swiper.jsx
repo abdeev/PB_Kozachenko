@@ -17,7 +17,7 @@ export default function TopPositions() {
   return (
     <>
       <Swiper
-        slidesPerView={4}
+        slidesPerView={3}
         spaceBetween={2}
         autoplay={{
           delay: 2500,
@@ -27,7 +27,7 @@ export default function TopPositions() {
           clickable: true,
         }}
         modules={[Autoplay, Pagination]}
-        className="mySwiper"
+        className="swiper"
       >
         <SwiperSlide>
           <img

@@ -43,3 +43,16 @@
   transform: translate(450%, 0);
   z-index: 100;
 }
+
+.Body {
+  display: flex;
+  /* flex-direction: row; */
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.PriceNaviWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
