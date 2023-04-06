@@ -1,13 +1,12 @@
 import React from "react";
 import s from "./PriceList.module.css";
 
-const Pricelist = ({ priceList, query }) => {
+const Pricelist = ({ priceList, query, setCart, cart }) => {
   const filteredPrice = priceList.filter(
     (i) =>
       i.GoodName.toLowerCase().includes(query.toLowerCase()) ||
       i.Category.includes(query.toLowerCase())
   );
-
   if (filteredPrice.length > 0)
     return (
       <div className={s.PriceListWrapper}>
@@ -37,7 +36,19 @@ const Pricelist = ({ priceList, query }) => {
                   <p className={s.GoodName}>{i.GoodName}</p>
                   <p className={s.Amount}>{i.Amount}</p>
                   <p className={s.Price}>{i.Price}</p>
-                  <button className={s.AddButton}>+</button>
+                  <button
+                    className={s.AddButton}
+                    onClick={(e) => {
+                      const newOrder = [...e.target.parentElement.children].map(
+                        (i) => i.innerHTML
+                      );
+                      setCart((cart += 1));
+                      console.log("Сетстейт корзина:", cart);
+                      console.log("result:", newOrder);
+                    }}
+                  >
+                    +
+                  </button>
                 </li>
               );
             }

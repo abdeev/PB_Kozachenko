@@ -3,12 +3,13 @@ import { useState } from "react";
 import { ReactComponent as IconSearch } from "../../static/img/IconSearch.svg";
 import { ReactComponent as IconCall } from "../../static/icons/call_icon.svg";
 import { ReactComponent as IconMail } from "../../static/icons/mail_new_icon.svg";
+import { ReactComponent as IconSend } from "../../static/icons/send_order_icon.svg";
 import Logo from "../../static/img/Logo Kozachenko transparent.png";
 import { toast } from "react-toastify";
 import s from "./PageHeader.module.css";
 import ContactButton from "Components/ContactButton/ContactButton";
 
-export const PageHeader = ({ onSubmit }) => {
+export const PageHeader = ({ onSubmit, setModalFlag }) => {
   const [query, setQuery] = useState("");
 
   const handleChange = (e) => {
@@ -46,6 +47,16 @@ export const PageHeader = ({ onSubmit }) => {
           <div className={s.BtnWrapper}>
             <IconCall className={s.iconCall} />
             <ContactButton linkTo="tel:+380504540292" label="Подзвонити" />
+          </div>
+          <div className={s.BtnWrapper}>
+            <IconSend className={s.iconCall} />
+            <button
+              className={s.BtnOrderNow}
+              label="Створити заявку"
+              onClick={() => setModalFlag(true)}
+            >
+              Створити заявку
+            </button>
           </div>
         </div>
         <img src={Logo} alt="main logo Kozachenko" className={s.Logo} />

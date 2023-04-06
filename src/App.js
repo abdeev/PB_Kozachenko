@@ -4,24 +4,27 @@ import { PageHeader } from "../src/Components/PageHeader/PageHeader";
 import { PageFooter } from "../src/Components/PageFooter/PageFooter";
 import { DropDownMenu } from "Components/DropDownMenu/DropDownMenu";
 import { ReactComponent as IconMenu } from "../src/static/icons/drop_down_icon.svg";
+import tempOrderArray from "../src/static/tempOrder.json";
 import Backdrop from "Components/Backdrop/Backdrop";
-
-import s from "../src/App.module.css";
 import LeftSideBar from "Components/LeftSideBar/LeftSideBar";
 import { NaviBar } from "Components/NaviBar/NaviBar";
 import { MagnifyingGlass } from "react-loader-spinner";
 import Pricelist from "Components/PriceList/PriceList";
+import ModalForm from "Components/ModalForm/ModalForm";
+import s from "../src/App.module.css";
 
 export const App = () => {
   const [fullPrice, setFullPrice] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [categories, setCategories] = useState([]);
   const [currentCategory, setCurrentCategory] = useState("");
+  const [cart, setCart] = useState(tempOrderArray);
 
   const [isLoading, setIsLoading] = useState(false);
-  const [dropdownFlag, setDropdownFlag] = useState(false);
 
-  // const [showModal, setShowModal] = useState(false);
+  const [dropdownFlag, setDropdownFlag] = useState(false);
+  const [modalFlag, setModalFlag] = useState(false);
+
   const onChangeQuery = (query) => {
     setSearchQuery(query);
   };
@@ -76,9 +79,14 @@ export const App = () => {
       setDropdownFlag(!dropdownFlag);
     }
   };
+  const handleBackModalClick = (e) => {
+    if (e.target === e.currentTarget) {
+      setModalFlag(false);
+    }
+  };
   return (
     <div className={s.App}>
-      <PageHeader onSubmit={onChangeQuery} />
+      <PageHeader onSubmit={onChangeQuery} setModalFlag={setModalFlag} />
       <div className={s.dropDownWrap}>
         {dropdownFlag ? (
           <>
@@ -100,7 +108,7 @@ export const App = () => {
       </div>
       <Swiper className={s.SwiperWrap} />
       <div className={s.Body}>
-        <LeftSideBar />
+        <LeftSideBar setModalFlag={setModalFlag} />
         <div className={s.PriceNaviWrapper}>
           <NaviBar />
           {isLoading && (
@@ -114,10 +122,23 @@ export const App = () => {
               color="#8B4513"
             />
           )}
-          <Pricelist priceList={fullPrice} query={searchQuery} />
+          <Pricelist
+            priceList={fullPrice}
+            query={searchQuery}
+            setCart={setCart}
+            cart={cart}
+          />
         </div>
       </div>
       <PageFooter />
+      {modalFlag && (
+        <ModalForm
+          handleBackModalClick={handleBackModalClick}
+          setModalFlag={setModalFlag}
+          cart={cart}
+          setCart={setCart}
+        />
+      )}
     </div>
   );
 };

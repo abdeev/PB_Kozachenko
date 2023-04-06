@@ -1,0 +1,191 @@
+[
+  {
+    "UniqueID": "ZGJhOWQ0NGUtYTExNy00Y2VmLWE3MzgtMDAzOGYwNmI4YzQw",
+    "Art": 2859,
+    "SeqNum": 1,
+    "GoodName": "Батончик Knoppers 40 гр",
+    "Amount": 40,
+    "Price": 20,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "NzNiYTA2NWEtNjdkMS00NmMxLTg5MWItOTIzOGEyYmZhMTdl",
+    "Art": 1075,
+    "SeqNum": 1,
+    "GoodName": "Батончик Баунти мол. 57 гр.*24",
+    "Amount": 24,
+    "Price": 21.02,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "MjU5MzcwZTItODM0Ny00M2ExLTk5ZDgtMmZiZGJjNGVhOTVl",
+    "Art": 1077,
+    "SeqNum": 2,
+    "GoodName": "Батончик Баунти ТРИО мол. 85 гр.*21",
+    "Amount": 21,
+    "Price": 29.67,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "MWRmMGQ1N2YtOWIyYi00ZWFiLWI4YTYtYzY1MmIxMWU2NGJi",
+    "Art": 1081,
+    "SeqNum": 3,
+    "GoodName": "Батончик Марс Макс 70 гр.*24",
+    "Amount": 24,
+    "Price": 28.41,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "ZDg3Mzc2MGUtNDQ4OS00YWRmLThkYjctOGQ4YjVkZjJjNDE1",
+    "Art": 1070,
+    "SeqNum": 4,
+    "GoodName": "Батончик Сникерс 50 гр.*40",
+    "Amount": 40,
+    "Price": 17.83,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "OGEyNTM1ODAtNGU0My00ZWE5LWJmMWItZGNiZjZjNDQyZmRj",
+    "Art": 1071,
+    "SeqNum": 5,
+    "GoodName": "Батончик СуперСникерс 112.5 гр.*20",
+    "Amount": 20,
+    "Price": 36.23,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "OTdiNTZjODItYzc0OS00YjhlLTlmYzktNDFhN2M2M2M1ZDkx",
+    "Art": 1085,
+    "SeqNum": 6,
+    "GoodName": "Батончик Твикс 50 гр.*32*5",
+    "Amount": 32,
+    "Price": 15.75,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "ZWNhYzVhOTgtNjhiZC00MTIzLTllOTMtZDJhMWUxNTVmOTY5",
+    "Art": 1086,
+    "SeqNum": 7,
+    "GoodName": "Батончик Твикс Екстра 82 гр.*30*4",
+    "Amount": 30,
+    "Price": 25.2,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "OTdjMjI3ZTktZWZlMi00NmVhLTk2MjYtYTlhNDhlOTYzMjI1",
+    "Art": 1060,
+    "SeqNum": 8,
+    "GoodName": "Батончик M$M желтый 45 гр.*36",
+    "Amount": 36,
+    "Price": 21,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "N2UzNDEzN2MtODhkZi00ODVhLTgyZGMtYjg4YTRkNmI1YWVj",
+    "Art": 1061,
+    "SeqNum": 9,
+    "GoodName": "Батончик M$M коричневый 45 гр.*24",
+    "Amount": 24,
+    "Price": 21,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "YTM0OTEzNDktZmI4NC00NjBjLWI4NDEtOWQ3MmEzOGM2Mjg1",
+    "Art": 1055,
+    "SeqNum": 13,
+    "GoodName": "Батончик Натс 47гр*24",
+    "Amount": 24,
+    "Price": 22.98,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "ZTIyYjg4ODItZTU1YS00YjkwLWI4MDItZWNlNmRhZjFlM2Iy",
+    "Art": 1056,
+    "SeqNum": 14,
+    "GoodName": "Батончик Натс Кинг Сайз 65гр*24",
+    "Amount": 24,
+    "Price": 34.46,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "NTcxZmVjMTctNzQzOS00YTNlLThlNjEtMjAwZWFmNDVmNmU2",
+    "Art": 1078,
+    "SeqNum": 15,
+    "GoodName": "Батончик Лайн стандарт 44гр*48",
+    "Amount": 30,
+    "Price": 15.54,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "NmYwMTM0OGEtYTY4OS00NTc3LWI5M2QtNjU2OWVlMDA0ZDg0",
+    "Art": 1053,
+    "SeqNum": 16,
+    "GoodName": "Батончик Лайн Кинг  2+1 90 гр",
+    "Amount": 18,
+    "Price": 30.73,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "YzZjYmViZTQtZDZkYS00NDFjLThlNzYtZmZkMTVjMjhhNTc0",
+    "Art": 1054,
+    "SeqNum": 17,
+    "GoodName": "Батончик Лайн арахис Кинг  2+1 90 гр",
+    "Amount": 18,
+    "Price": 30.73,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "MWRhMWNmMzctZWViNy00NGIwLTljMGYtMTdkYTljNjVlMWVi",
+    "Art": 1058,
+    "SeqNum": 18,
+    "GoodName": "Кит Кат Чанки 40 гр.*24",
+    "Amount": 24,
+    "Price": 18.85,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "OWJiODljMDUtNjUxZS00M2ZkLTk5NDEtZTVhYjA4YzQ3MDVi",
+    "Art": 1057,
+    "SeqNum": 19,
+    "GoodName": "Кит Кат  Дуо 70гр*24*4",
+    "Amount": 24,
+    "Price": 30.73,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "ZjBiOTNlNzMtNGM4MC00ZGEwLTg4MDQtZDFkNDQ0ZDRhNzM5",
+    "Art": 9300,
+    "SeqNum": 1,
+    "GoodName": "Бат Рошен зеленый мол/арахис *30*6",
+    "Amount": 30,
+    "Price": 11.36,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "YjZmMDRjZmItN2NjYi00MzhiLTk0NDYtMTJkOTk0NDUyMjEw",
+    "Art": 9301,
+    "SeqNum": 2,
+    "GoodName": "Бат Рошен красный *30*6",
+    "Amount": 30,
+    "Price": 11.36,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "ZjQ3NGU0NWYtMzAwOC00M2ZlLWIxNTktZDk3N2IwMDMxNWQ4",
+    "Art": 9303,
+    "SeqNum": 3,
+    "GoodName": "Бат Рошен оранж.Карамель *30*6",
+    "Amount": 30,
+    "Price": 11.36,
+    "Category": "батончик"
+  },
+  {
+    "UniqueID": "NjJkNDdjMGMtY2IzNS00MGIyLWI2ZjQtZmRlZjc4MmNlMWRj",
+    "Art": 9304,
+    "SeqNum": 4,
+    "GoodName": "Бат Рошен синий Крем-брюле *30*6",
+    "Amount": 30,
+    "Price": 11.36,
+    "Category": "батончик"
+  }
+]

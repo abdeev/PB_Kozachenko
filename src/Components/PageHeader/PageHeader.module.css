@@ -32,10 +32,24 @@
 }
 
 .iconCall {
+  position: relative;
   width: 30px;
   fill: var(--brown-bg-color);
   stroke: var(--white-bg-color);
   margin-right: 5px;
+}
+
+.BtnOrderNow {
+  width: 110px;
+  text-align: center;
+  padding: 2px 0;
+  background-color: var(--brown-bg-color);
+  color: var(--white-bg-color);
+  border: 1px solid var(--white-bg-color);
+  text-decoration: none;
+  border-radius: 7px;
+  font-family: inherit;
+  transition: var(--default-animation);
 }
 
 .Logo {
