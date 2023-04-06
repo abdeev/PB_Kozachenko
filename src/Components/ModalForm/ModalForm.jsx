@@ -32,13 +32,14 @@ const ModalForm = ({ handleBackModalClick, setModalFlag, cart, setCart }) => {
                 <p className={s.Amount}>{i.Amount}</p>
                 <p className={s.Price}>{i.Price}</p>
                 <p className={s.Order}>{i.Order}</p>
+                <button className={s.buttonMinus}>-</button>
               </li>
             );
           })}
         </ul>
-        <form action="submit">
-          <div>
-            <label>
+        <form action="submit" className={s.formWrap}>
+          <div className={s.inputsWrap}>
+            <label className={s.inputs}>
               Ваше ім'я або назва підприємства:
               <input
                 type="text"
@@ -48,7 +49,7 @@ const ModalForm = ({ handleBackModalClick, setModalFlag, cart, setCart }) => {
                 placeholder="ФОП Козачка"
               />
             </label>
-            <label>
+            <label className={s.inputs}>
               Введіть Ваш номер телефону:
               <input
                 type="text"
@@ -58,10 +59,13 @@ const ModalForm = ({ handleBackModalClick, setModalFlag, cart, setCart }) => {
                 placeholder="+380501112233"
               />
             </label>
-            <label>
+            <label className={s.commentWrap}>
               Додайте коментар:
-              <input
+              <textarea
+                className={s.commentInput}
                 type="text"
+                rows="8"
+                cols="33"
                 value={userComment}
                 onChange={(e) => setUserComment(e.target.value)}
                 name="userComment"
@@ -70,7 +74,7 @@ const ModalForm = ({ handleBackModalClick, setModalFlag, cart, setCart }) => {
             </label>
           </div>
 
-          <button type="submit" onClick={submitForm}>
+          <button className={s.buttonSubmit} type="submit" onClick={submitForm}>
             Відправити замовлення
           </button>
         </form>
