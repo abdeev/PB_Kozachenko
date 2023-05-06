@@ -12,7 +12,6 @@ export const PageFooter = () => {
         <p className={s.footerLink}>Як проїхати до нас</p>
         <p className={s.footerLink}>Типовий договір поставки</p>
         <p className={s.footerLink}>Сертифікати якості</p>
-        <p className={s.footerLink}>Типовий рахунок</p>
       </div>
       <div className={s.contactsWrapper}>
         <div className={s.ContactsContainer}>

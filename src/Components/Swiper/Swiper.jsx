@@ -1,8 +1,8 @@
 import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import KavaStarogoLvovu from "../../static/img/kava-starogo-lvovu-logo.webp";
-import KonservyMK from "../../static/img/konservy-mk-poland.png";
+import KavaStarogoLvovu from "../../static/img/kava_starogo_lvovu_logo.svg";
+import KonservyMK from "../../static/img/MK-shproty.png";
 import Lovare from "../../static/img/lovare-logo.png";
 
 import "swiper/css";

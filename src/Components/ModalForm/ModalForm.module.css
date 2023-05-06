@@ -52,7 +52,7 @@
 }
 
 .Amount {
-    width: 37px;
+    width: 40px;
 }
 
 .Price {
@@ -121,4 +121,8 @@
     background-color: var(--white-bg-color);
     color: var(--brown-bg-color);
     border: 2px solid var(--brown-bg-color);
+}
+
+.Toast {
+    z-index: 5000;
 }

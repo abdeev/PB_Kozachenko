@@ -30,7 +30,7 @@
 .IconTitle {
   position: relative;
   text-align: right;
-  transform: translate(150%, 15px);
+  transform: translate(120px, 0);
   color: var(--white-bg-color);
   z-index: 100;
 }
@@ -40,8 +40,16 @@
   fill: var(--brown-bg-color);
   stroke: var(--white-bg-color);
   cursor: pointer;
-  transform: translate(450%, 0);
+  transform: translate(160px, -15px);
   z-index: 100;
+  transition: var(--default-animation);
+  cursor: pointer;
+}
+
+.IconMenu:hover,
+.IconMenu:focus {
+  background-color: var(--white-bg-color);
+  color: var(--brown-bg-color);
 }
 
 .Body {

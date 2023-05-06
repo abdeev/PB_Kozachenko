@@ -46,11 +46,22 @@
 }
 
 .footerLink {
-  border: 1px solid var(--white-bg-color);
   padding: 3px;
   margin: 0;
+  transition: var(--default-animation);
 }
 
+.footerLink:hover,
+.footerLink:focus {
+  background-color: var(--white-bg-color);
+  color: var(--brown-bg-color);
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.footerLink:last-child {
+  margin-bottom: 15px;
+}
 
 @-webkit-keyframes scale-up-top {
   0% {

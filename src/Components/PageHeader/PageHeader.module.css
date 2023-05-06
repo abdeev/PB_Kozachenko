@@ -52,6 +52,13 @@
   transition: var(--default-animation);
 }
 
+.BtnOrderNow:hover,
+.BtnOrderNow:focus {
+  background-color: var(--white-bg-color);
+  color: var(--brown-bg-color);
+  cursor: pointer;
+}
+
 .Logo {
   width: 100px;
   margin: 10px 10px;

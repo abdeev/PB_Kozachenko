@@ -1,13 +1,22 @@
 import React from "react";
+import { InputNumber } from "primereact/inputnumber";
 import s from "./PriceList.module.css";
+import "primeicons/primeicons.css";
+import "primereact/resources/primereact.css";
+import "primeflex/primeflex.css";
 
 const Pricelist = ({ priceList, query, setCart, cart }) => {
-  const filteredPrice = priceList.filter(
-    (i) =>
-      i.GoodName.toLowerCase().includes(query.toLowerCase()) ||
-      i.Category.includes(query.toLowerCase())
-  );
-  if (filteredPrice.length > 0)
+  const filterPrice = (q) => {
+    if (q === "Повний прайс") {
+      return priceList;
+    }
+    return priceList.filter(
+      (i) =>
+        i.GoodName.toLowerCase().includes(query.toLowerCase()) ||
+        i.Category.includes(query.toLowerCase())
+    );
+  };
+  if (filterPrice(query).length > 0)
     return (
       <div className={s.PriceListWrapper}>
         <ul className={s.PriceUL}>
@@ -16,9 +25,9 @@ const Pricelist = ({ priceList, query, setCart, cart }) => {
             <p className={s.GoodName}>Назва товару</p>
             <p className={s.Amount}>Штук у ящіку</p>
             <p className={s.Price}>Ціна у грн з НДС за шт.</p>
-            <button className={s.AddButton}>+</button>
+            <p className={s.Price}>К-сть замовл</p>
           </li>
-          {filteredPrice.map((i) => {
+          {filterPrice(query).map((i) => {
             if (i.Art === "Артикул" && i.GoodName === "Наименование") {
               return null;
             }
@@ -30,25 +39,46 @@ const Pricelist = ({ priceList, query, setCart, cart }) => {
               );
             }
             if (i.Art !== "" && i.GoodName !== "") {
+              let tempObject = {
+                Art: i.Art,
+                GoodName: i.GoodName,
+                Amount: i.Amount,
+                Price: i.Price,
+                Order: 0,
+              };
+
               return (
                 <li className={s.PriceItem} key={i.UniqueID}>
                   <p className={s.ArtNumber}>{i.Art}</p>
                   <p className={s.GoodName}>{i.GoodName}</p>
                   <p className={s.Amount}>{i.Amount}</p>
                   <p className={s.Price}>{i.Price}</p>
-                  <button
-                    className={s.AddButton}
-                    onClick={(e) => {
-                      const newOrder = [...e.target.parentElement.children].map(
-                        (i) => i.innerHTML
+
+                  <InputNumber
+                    inputId={i.Art}
+                    value={tempObject.Order}
+                    onValueChange={(e) => {
+                      const tempQuantityItem = [...cart];
+                      tempObject.Order = e.value;
+                      const indOfGood = tempQuantityItem.findIndex(
+                        (objItem) => objItem.Art === i.Art
                       );
-                      setCart((cart += 1));
-                      console.log("Сетстейт корзина:", cart);
-                      console.log("result:", newOrder);
+                      if (indOfGood !== -1) {
+                        tempQuantityItem[indOfGood].Order = e.value;
+                      } else tempQuantityItem.push(tempObject);
+                      setCart(tempQuantityItem);
                     }}
-                  >
-                    +
-                  </button>
+                    mode="decimal"
+                    showButtons
+                    buttonLayout="vertical"
+                    style={{ width: "50px" }}
+                    decrementButtonClassName="p-button-secondary"
+                    incrementButtonClassName="p-button-secondary"
+                    incrementButtonIcon="pi pi-plus"
+                    decrementButtonIcon="pi pi-minus"
+                    min={0}
+                    max={1000}
+                  />
                 </li>
               );
             }

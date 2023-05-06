@@ -1,22 +1,70 @@
-import s from "../ModalForm/ModalForm.module.css";
-import Backdrop from "Components/Backdrop/Backdrop";
 import { useState } from "react";
+import { useRef } from "react";
+import { Toast } from "primereact/toast";
+
+import Backdrop from "Components/Backdrop/Backdrop";
 import TelegramSendMessage from "api/TelegramSendMessage";
+import randomID from "@mrenke/randomid-generator";
+import s from "../ModalForm/ModalForm.module.css";
 
+const INITIAL_USER_DATA = {
+  userName: "",
+  userTel: "",
+  userAddress: "",
+  userComment: "",
+};
 const ModalForm = ({ handleBackModalClick, setModalFlag, cart, setCart }) => {
-  const [userName, setUserName] = useState("");
-  const [userTel, setUserTel] = useState("");
-  const [userComment, setUserComment] = useState("");
+  const [userData, setUserData] = useState(INITIAL_USER_DATA);
+  const { userName, userTel, userAddress, userComment } = userData;
+  const toastTС = useRef(null);
 
+  const showTopCenter = () => {
+    toastTС.current.show({
+      severity: "success",
+      summary: "Info Message",
+      detail: "Ваше замовлення відправлено!",
+      life: 3000,
+    });
+  };
+
+  const resetForm = () => {
+    setUserData(INITIAL_USER_DATA);
+  };
   const submitForm = (e) => {
     e.preventDefault();
-    let messageToTG = `✅ НОВА ЗАЯВКА З САЙТУ \n Від: ${userName} \n Телефон: ${userTel} \n Коментар: ${userComment}`;
+    const userOrder = cart.slice(1);
+    let messageToTG = `✅ НОВА ЗАЯВКА З САЙТУ \n
+    Дата: ${new Date().toLocaleString()} \n 
+    Від: ${userName} \n 
+    Адреса: ${userAddress}\n 
+    Телефон: ${userTel} \n 
+    Коментар: ${userComment} \n 
+    Замовлення: \n
+    ${userOrder.map((i, ind) => {
+      return `${ind + 1} \n 
+      арт: ${i.Art} \n
+      товар: ${i.GoodName} \n
+      кількість у ящику: ${i.Amount} \n
+      ціна за одиницю: ${i.Price} \n
+      кількість замовлено: ${i.Order} \n \n`;
+    })}
+    
+    Усього замовлено ${userOrder.length} товарів. \n
+    На сумму: ${userOrder.reduce(
+      (acc, i) => acc + i.Price * i.Order,
+      0
+    )} грн. \n`;
 
     TelegramSendMessage(messageToTG);
-    setUserName("");
-    setUserTel("");
-    setUserComment("");
+    resetForm();
+    showTopCenter();
     setModalFlag(false);
+  };
+  const handleInputsChange = (e) => {
+    const { name, value } = e.target;
+    const newData = { ...userData };
+    newData[name] = value;
+    setUserData(newData);
   };
   return (
     <div className={s.modalAndBackWrap}>
@@ -26,13 +74,12 @@ const ModalForm = ({ handleBackModalClick, setModalFlag, cart, setCart }) => {
         <ul className={s.ModalUL}>
           {cart.map((i) => {
             return (
-              <li className={s.ModalItem} key={i.Art}>
+              <li className={s.ModalItem} key={randomID()}>
                 <p className={s.ArtNumber}>{i.Art}</p>
                 <p className={s.GoodName}>{i.GoodName}</p>
                 <p className={s.Amount}>{i.Amount}</p>
                 <p className={s.Price}>{i.Price}</p>
-                <p className={s.Order}>{i.Order}</p>
-                <button className={s.buttonMinus}>-</button>
+                <div className={s.quantityBlock}>{i.Order}</div>
               </li>
             );
           })}
@@ -44,9 +91,21 @@ const ModalForm = ({ handleBackModalClick, setModalFlag, cart, setCart }) => {
               <input
                 type="text"
                 value={userName}
-                onChange={(e) => setUserName(e.target.value)}
+                onChange={handleInputsChange}
                 name="userName"
                 placeholder="ФОП Козачка"
+                required={true}
+              />
+            </label>
+            <label className={s.inputs}>
+              Введіть адресу доставки Вашого замовлення:
+              <input
+                type="text"
+                value={userAddress}
+                onChange={handleInputsChange}
+                name="userAddress"
+                placeholder="м. Дніпро, просп. Перемоги 22а, магазин Ластівка"
+                required={true}
               />
             </label>
             <label className={s.inputs}>
@@ -54,9 +113,10 @@ const ModalForm = ({ handleBackModalClick, setModalFlag, cart, setCart }) => {
               <input
                 type="text"
                 value={userTel}
-                onChange={(e) => setUserTel(e.target.value)}
+                onChange={handleInputsChange}
                 name="userTel"
                 placeholder="+380501112233"
+                required={true}
               />
             </label>
             <label className={s.commentWrap}>
@@ -67,7 +127,7 @@ const ModalForm = ({ handleBackModalClick, setModalFlag, cart, setCart }) => {
                 rows="8"
                 cols="33"
                 value={userComment}
-                onChange={(e) => setUserComment(e.target.value)}
+                onChange={handleInputsChange}
                 name="userComment"
                 placeholder="Зателефонуйте мені, для узгодження деталей"
               />
@@ -77,6 +137,7 @@ const ModalForm = ({ handleBackModalClick, setModalFlag, cart, setCart }) => {
           <button className={s.buttonSubmit} type="submit" onClick={submitForm}>
             Відправити замовлення
           </button>
+          <Toast className={s.Toast} ref={toastTС} position="top-center" />
         </form>
       </div>
     </div>

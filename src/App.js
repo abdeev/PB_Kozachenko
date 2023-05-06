@@ -4,10 +4,8 @@ import { PageHeader } from "../src/Components/PageHeader/PageHeader";
 import { PageFooter } from "../src/Components/PageFooter/PageFooter";
 import { DropDownMenu } from "Components/DropDownMenu/DropDownMenu";
 import { ReactComponent as IconMenu } from "../src/static/icons/drop_down_icon.svg";
-import tempOrderArray from "../src/static/tempOrder.json";
 import Backdrop from "Components/Backdrop/Backdrop";
 import LeftSideBar from "Components/LeftSideBar/LeftSideBar";
-import { NaviBar } from "Components/NaviBar/NaviBar";
 import { MagnifyingGlass } from "react-loader-spinner";
 import Pricelist from "Components/PriceList/PriceList";
 import ModalForm from "Components/ModalForm/ModalForm";
@@ -18,7 +16,15 @@ export const App = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [categories, setCategories] = useState([]);
   const [currentCategory, setCurrentCategory] = useState("");
-  const [cart, setCart] = useState(tempOrderArray);
+  const [cart, setCart] = useState([
+    {
+      Art: "Арт",
+      GoodName: "Назва товару",
+      Amount: "Штук у ящику",
+      Price: "Ціна за шт.",
+      Order: "Замовлено",
+    },
+  ]);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -101,7 +107,7 @@ export const App = () => {
           </>
         ) : (
           <div className={s.IconMenuWrap}>
-            <p className={s.IconTitle}>Меню</p>
+            <p className={s.IconTitle}>Каталог</p>
             <IconMenu className={s.IconMenu} onClick={handleDropDownMenu} />
           </div>
         )}
@@ -110,7 +116,6 @@ export const App = () => {
       <div className={s.Body}>
         <LeftSideBar setModalFlag={setModalFlag} />
         <div className={s.PriceNaviWrapper}>
-          <NaviBar />
           {isLoading && (
             <MagnifyingGlass
               visible={true}
@@ -118,7 +123,7 @@ export const App = () => {
               width="120"
               ariaLabel="MagnifyingGlass-loading"
               wrapperClass="MagnifyingGlass-wrapper"
-              glassColor="#c0efff"
+              glassColor="rgb(192, 239, 255, 0.3)"
               color="#8B4513"
             />
           )}
