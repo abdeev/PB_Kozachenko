@@ -1,0 +1,43 @@
+.infoBox {
+    z-index: 10000;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    background: var(--brown-bg-color);
+    color: var(--white-bg-color);
+    border: 1px solid var(--white-bg-color);
+    border-radius: 5px;
+}
+
+.infoBox_title {
+    font-size: 7px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.infoBox_number {
+    font-size: 15px;
+    line-height: 15px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .infoBox {
+        border-radius: 10px;
+    }
+
+    .infoBox_title {
+        font-size: 15px;
+
+    }
+
+    .infoBox_number {
+        font-size: 20px;
+        line-height: 20px;
+        padding-bottom: 5px;
+    }
+}

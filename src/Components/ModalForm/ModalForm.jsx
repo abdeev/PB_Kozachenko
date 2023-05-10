@@ -1,11 +1,10 @@
-import { useState } from "react";
-import { useRef } from "react";
-import { Toast } from "primereact/toast";
-
+import { useState, useEffect } from "react";
 import Backdrop from "Components/Backdrop/Backdrop";
 import TelegramSendMessage from "api/TelegramSendMessage";
 import randomID from "@mrenke/randomid-generator";
 import s from "../ModalForm/ModalForm.module.css";
+import "primeicons/primeicons.css";
+import { InputNumber } from "primereact/inputnumber";
 
 const INITIAL_USER_DATA = {
   userName: "",
@@ -13,22 +12,32 @@ const INITIAL_USER_DATA = {
   userAddress: "",
   userComment: "",
 };
+
 const ModalForm = ({ handleBackModalClick, setModalFlag, cart, setCart }) => {
   const [userData, setUserData] = useState(INITIAL_USER_DATA);
   const { userName, userTel, userAddress, userComment } = userData;
-  const toastTС = useRef(null);
 
-  const showTopCenter = () => {
-    toastTС.current.show({
-      severity: "success",
-      summary: "Info Message",
-      detail: "Ваше замовлення відправлено!",
-      life: 3000,
-    });
-  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
+  let totalOrderedPrice = cart.reduce((acc, i) => {
+    if (isNaN(i.Price * i.Order)) return acc;
+    return acc + i.Price * i.Order;
+  }, 0);
   const resetForm = () => {
     setUserData(INITIAL_USER_DATA);
+  };
+  const clearCart = () => {
+    setCart([
+      {
+        Art: "Арт",
+        GoodName: "Назва товару",
+        Amount: "Штук у ящику",
+        Price: "Ціна за шт.",
+        Order: "Замовлено",
+      },
+    ]);
   };
   const submitForm = (e) => {
     e.preventDefault();
@@ -41,23 +50,21 @@ const ModalForm = ({ handleBackModalClick, setModalFlag, cart, setCart }) => {
     Коментар: ${userComment} \n 
     Замовлення: \n
     ${userOrder.map((i, ind) => {
-      return `${ind + 1} \n 
+      return `${ind + 1}  \n
       арт: ${i.Art} \n
       товар: ${i.GoodName} \n
       кількість у ящику: ${i.Amount} \n
       ціна за одиницю: ${i.Price} \n
-      кількість замовлено: ${i.Order} \n \n`;
+      кількість замовлено: ${i.Order}  \n \n`;
     })}
     
     Усього замовлено ${userOrder.length} товарів. \n
-    На сумму: ${userOrder.reduce(
-      (acc, i) => acc + i.Price * i.Order,
-      0
-    )} грн. \n`;
+    На сумму: ${userOrder
+      .reduce((acc, i) => acc + i.Price * i.Order, 0)
+      .toFixed(2)} грн. \n`;
 
     TelegramSendMessage(messageToTG);
     resetForm();
-    showTopCenter();
     setModalFlag(false);
   };
   const handleInputsChange = (e) => {
@@ -70,24 +77,69 @@ const ModalForm = ({ handleBackModalClick, setModalFlag, cart, setCart }) => {
     <div className={s.modalAndBackWrap}>
       <Backdrop onClick={handleBackModalClick} />
       <div className={s.modal}>
+        <i
+          className={`pi pi-times-circle ${s.closeButton}`}
+          onClick={handleBackModalClick}
+        ></i>
+
         <p className={s.orderTitle}>Деталі замовлення</p>
         <ul className={s.ModalUL}>
+          <li className={s.ModalItem} key={randomID()}>
+            <p className={s.ArtNumber}>Арт</p>
+            <p className={s.GoodName}>Назва товару</p>
+            <p className={s.Amount}>Штук у ящику</p>
+            <p className={s.Price}>Ціна за шт</p>
+            <div className={s.quantityBlock}>Зам овл ено</div>
+            <div className={s.totalPrice}>Сума замовлення</div>
+          </li>
           {cart.map((i) => {
+            if (isNaN(i.Order * i.Price)) return null;
+
             return (
               <li className={s.ModalItem} key={randomID()}>
                 <p className={s.ArtNumber}>{i.Art}</p>
                 <p className={s.GoodName}>{i.GoodName}</p>
                 <p className={s.Amount}>{i.Amount}</p>
                 <p className={s.Price}>{i.Price}</p>
-                <div className={s.quantityBlock}>{i.Order}</div>
+                <InputNumber
+                  inputId={i.Art}
+                  value={i.Order}
+                  onValueChange={(e) => {
+                    i.Order = e.value;
+                  }}
+                  mode="decimal"
+                  showButtons
+                  buttonLayout="vertical"
+                  style={{ width: "34px" }}
+                  decrementButtonClassName="p-button-secondary"
+                  incrementButtonClassName="p-button-secondary"
+                  incrementButtonIcon="pi pi-plus"
+                  decrementButtonIcon="pi pi-minus"
+                  min={0}
+                  max={1000}
+                />
+                <div className={s.totalPrice}>
+                  {(i.Price * i.Order).toFixed(2)}
+                </div>
               </li>
             );
           })}
+          <p>
+            Усього замовлено{"  "}
+            <b className={s.totalOrderedNumber}>
+              {cart.length - 1}
+            </b> позицій. <br />
+            На суму:{" "}
+            <b className={s.totalOrderedNumber}>
+              {totalOrderedPrice.toFixed(2)}
+            </b>{" "}
+            грн.
+          </p>
         </ul>
         <form action="submit" className={s.formWrap}>
           <div className={s.inputsWrap}>
             <label className={s.inputs}>
-              Ваше ім'я або назва підприємства:
+              Ваше ім'я або назву підприємства:
               <input
                 type="text"
                 value={userName}
@@ -137,7 +189,9 @@ const ModalForm = ({ handleBackModalClick, setModalFlag, cart, setCart }) => {
           <button className={s.buttonSubmit} type="submit" onClick={submitForm}>
             Відправити замовлення
           </button>
-          <Toast className={s.Toast} ref={toastTС} position="top-center" />
+          <button className={s.buttonClear} type="reset" onClick={clearCart}>
+            Скинути замовлення
+          </button>
         </form>
       </div>
     </div>

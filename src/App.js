@@ -5,11 +5,11 @@ import { PageFooter } from "../src/Components/PageFooter/PageFooter";
 import { DropDownMenu } from "Components/DropDownMenu/DropDownMenu";
 import { ReactComponent as IconMenu } from "../src/static/icons/drop_down_icon.svg";
 import Backdrop from "Components/Backdrop/Backdrop";
-import LeftSideBar from "Components/LeftSideBar/LeftSideBar";
 import { MagnifyingGlass } from "react-loader-spinner";
 import Pricelist from "Components/PriceList/PriceList";
 import ModalForm from "Components/ModalForm/ModalForm";
 import s from "../src/App.module.css";
+import OrderInfo from "Components/OrderInfo/OrderInfo";
 
 export const App = () => {
   const [fullPrice, setFullPrice] = useState([]);
@@ -92,6 +92,7 @@ export const App = () => {
   };
   return (
     <div className={s.App}>
+      <OrderInfo cart={cart} className={s.OrderInfo} />
       <PageHeader onSubmit={onChangeQuery} setModalFlag={setModalFlag} />
       <div className={s.dropDownWrap}>
         {dropdownFlag ? (
@@ -114,7 +115,6 @@ export const App = () => {
       </div>
       <Swiper className={s.SwiperWrap} />
       <div className={s.Body}>
-        <LeftSideBar setModalFlag={setModalFlag} />
         <div className={s.PriceNaviWrapper}>
           {isLoading && (
             <MagnifyingGlass
