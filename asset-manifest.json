@@ -1,23 +1,29 @@
 {
   "files": {
-    "main.css": "/PB_Kozachenko/static/css/main.82b61d0c.css",
-    "main.js": "/PB_Kozachenko/static/js/main.507ac68e.js",
+    "main.css": "/PB_Kozachenko/static/css/main.f5aef767.css",
+    "main.js": "/PB_Kozachenko/static/js/main.2551f505.js",
     "static/js/787.e7df3860.chunk.js": "/PB_Kozachenko/static/js/787.e7df3860.chunk.js",
+    "static/media/MK-shproty.png": "/PB_Kozachenko/static/media/MK-shproty.e144b3bfa49beed8ff9f.png",
     "static/media/Logo Kozachenko transparent.png": "/PB_Kozachenko/static/media/Logo Kozachenko transparent.27287aae22c40bedba36.png",
-    "static/media/konservy-mk-poland.png": "/PB_Kozachenko/static/media/konservy-mk-poland.57c54f665b644508150a.png",
-    "static/media/kava-starogo-lvovu-logo.webp": "/PB_Kozachenko/static/media/kava-starogo-lvovu-logo.aad582dc3b79eef9c07b.webp",
+    "static/media/primeicons.svg": "/PB_Kozachenko/static/media/primeicons.e1441b135b3ca9ad643c.svg",
+    "static/media/primeicons.eot": "/PB_Kozachenko/static/media/primeicons.d44157bdfa026dc877af.eot",
+    "static/media/primeicons.woff": "/PB_Kozachenko/static/media/primeicons.10d3152104f2208ac82a.woff",
+    "static/media/primeicons.ttf": "/PB_Kozachenko/static/media/primeicons.ea5358601d0a3fd6670b.ttf",
+    "static/media/primeicons.woff2": "/PB_Kozachenko/static/media/primeicons.78172950b335ccdb94e2.woff2",
+    "static/media/kava_starogo_lvovu_logo.svg": "/PB_Kozachenko/static/media/kava_starogo_lvovu_logo.a5f9ace1fdc2bf11cd97298ec1a84bd0.svg",
+    "static/media/color.png": "/PB_Kozachenko/static/media/color.6441e63a57ccc5105bad.png",
     "static/media/call_icon.svg": "/PB_Kozachenko/static/media/call_icon.3181ce58818792f7554084763179c4d3.svg",
     "static/media/IconSearch.svg": "/PB_Kozachenko/static/media/IconSearch.020a213063cbbe5de47f514062a217e0.svg",
     "index.html": "/PB_Kozachenko/index.html",
     "static/media/send_order_icon.svg": "/PB_Kozachenko/static/media/send_order_icon.a658bb7d20aa65bfa0177926b936cedc.svg",
     "static/media/mail_new_icon.svg": "/PB_Kozachenko/static/media/mail_new_icon.c55a690c33dc4458b19b4554456eecd0.svg",
     "static/media/drop_down_icon.svg": "/PB_Kozachenko/static/media/drop_down_icon.f8efbcf89054cbe9ad10c37975a24225.svg",
-    "main.82b61d0c.css.map": "/PB_Kozachenko/static/css/main.82b61d0c.css.map",
-    "main.507ac68e.js.map": "/PB_Kozachenko/static/js/main.507ac68e.js.map",
+    "main.f5aef767.css.map": "/PB_Kozachenko/static/css/main.f5aef767.css.map",
+    "main.2551f505.js.map": "/PB_Kozachenko/static/js/main.2551f505.js.map",
     "787.e7df3860.chunk.js.map": "/PB_Kozachenko/static/js/787.e7df3860.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.82b61d0c.css",
-    "static/js/main.507ac68e.js"
+    "static/css/main.f5aef767.css",
+    "static/js/main.2551f505.js"
   ]
 }
