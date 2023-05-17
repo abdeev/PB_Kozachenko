@@ -13,7 +13,13 @@ const INITIAL_USER_DATA = {
   userComment: "",
 };
 
-const ModalForm = ({ handleBackModalClick, setModalFlag, cart, setCart }) => {
+const ModalForm = ({
+  handleBackModalClick,
+  setModalFlag,
+  cart,
+  setCart,
+  changeQuantity,
+}) => {
   const [userData, setUserData] = useState(INITIAL_USER_DATA);
   const { userName, userTel, userAddress, userComment } = userData;
 
@@ -94,6 +100,13 @@ const ModalForm = ({ handleBackModalClick, setModalFlag, cart, setCart }) => {
           </li>
           {cart.map((i) => {
             if (isNaN(i.Order * i.Price)) return null;
+            let tempObject = {
+              Art: i.Art,
+              GoodName: i.GoodName,
+              Amount: i.Amount,
+              Price: i.Price,
+              Order: i.Order,
+            };
 
             return (
               <li className={s.ModalItem} key={randomID()}>
@@ -102,11 +115,9 @@ const ModalForm = ({ handleBackModalClick, setModalFlag, cart, setCart }) => {
                 <p className={s.Amount}>{i.Amount}</p>
                 <p className={s.Price}>{i.Price}</p>
                 <InputNumber
-                  inputId={i.Art}
-                  value={i.Order}
-                  onValueChange={(e) => {
-                    i.Order = e.value;
-                  }}
+                  inputId={randomID()}
+                  value={tempObject.Order}
+                  onValueChange={(e) => changeQuantity(e, i, tempObject)}
                   mode="decimal"
                   showButtons
                   buttonLayout="vertical"

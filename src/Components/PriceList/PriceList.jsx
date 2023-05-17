@@ -5,7 +5,7 @@ import "primeicons/primeicons.css";
 import "primereact/resources/primereact.css";
 import "primeflex/primeflex.css";
 
-const Pricelist = ({ priceList, query, setCart, cart }) => {
+const Pricelist = ({ priceList, query, changeQuantity }) => {
   const filterPrice = (q) => {
     if (q === "Повний прайс") {
       return priceList;
@@ -57,17 +57,7 @@ const Pricelist = ({ priceList, query, setCart, cart }) => {
                   <InputNumber
                     inputId={i.Art}
                     value={tempObject.Order}
-                    onValueChange={(e) => {
-                      const tempQuantityItem = [...cart];
-                      tempObject.Order = e.value;
-                      const indOfGood = tempQuantityItem.findIndex(
-                        (objItem) => objItem.Art === i.Art
-                      );
-                      if (indOfGood !== -1) {
-                        tempQuantityItem[indOfGood].Order = e.value;
-                      } else tempQuantityItem.push(tempObject);
-                      setCart(tempQuantityItem);
-                    }}
+                    onValueChange={(e) => changeQuantity(e, i, tempObject)}
                     mode="decimal"
                     showButtons
                     buttonLayout="vertical"

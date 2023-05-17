@@ -73,9 +73,20 @@ export const App = () => {
     if (currentCategory) {
       setSearchQuery(currentCategory);
     }
-
     return;
   }, [currentCategory]);
+
+  const changeQuantity = (e, i, tempObject) => {
+    const tempQuantityItem = [...cart];
+    tempObject.Order = e.value;
+    const indOfGood = tempQuantityItem.findIndex(
+      (objItem) => objItem.Art === i.Art
+    );
+    if (indOfGood !== -1) {
+      tempQuantityItem[indOfGood].Order = e.value;
+    } else tempQuantityItem.push(tempObject);
+    setCart(tempQuantityItem);
+  };
   const handleDropDownMenu = (e) => {
     e.preventDefault();
     setDropdownFlag(!dropdownFlag);
@@ -92,7 +103,11 @@ export const App = () => {
   };
   return (
     <div className={s.App}>
-      <OrderInfo cart={cart} className={s.OrderInfo} />
+      <OrderInfo
+        cart={cart}
+        className={s.OrderInfo}
+        onClick={() => setModalFlag(true)}
+      />
       <PageHeader onSubmit={onChangeQuery} setModalFlag={setModalFlag} />
       <div className={s.dropDownWrap}>
         {dropdownFlag ? (
@@ -132,6 +147,7 @@ export const App = () => {
             query={searchQuery}
             setCart={setCart}
             cart={cart}
+            changeQuantity={changeQuantity}
           />
         </div>
       </div>
@@ -142,6 +158,7 @@ export const App = () => {
           setModalFlag={setModalFlag}
           cart={cart}
           setCart={setCart}
+          changeQuantity={changeQuantity}
         />
       )}
     </div>
